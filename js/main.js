@@ -142,3 +142,79 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 });
+
+// 5. 3D Photo Stack Interactivity Logic
+let isHeroAnimating = false;
+let heroStackInterval;
+
+function cycleHeroStack() {
+  if (isHeroAnimating) return;
+  isHeroAnimating = true;
+  
+  const container = document.getElementById('hero-photo-stack');
+  if (!container) return;
+  
+  const cards = container.querySelectorAll('.photo-card');
+  const activeIndicator = document.getElementById('hero-stack-active-indicator');
+  const topCard = container.querySelector('.card-0');
+  
+  if (!topCard || cards.length === 0) {
+    isHeroAnimating = false;
+    return;
+  }
+  
+  // 1. Add cycle animation to top card (slide out to side)
+  topCard.classList.add('card-cycling');
+  
+  // 2. Wait 300ms (peak of the slide-out animation) to swap classes
+  setTimeout(() => {
+    cards.forEach(card => {
+      if (card.classList.contains('card-0')) {
+        card.classList.remove('card-0');
+        card.classList.add('card-3');
+      } else if (card.classList.contains('card-1')) {
+        card.classList.remove('card-1');
+        card.classList.add('card-0');
+      } else if (card.classList.contains('card-2')) {
+        card.classList.remove('card-2');
+        card.classList.add('card-1');
+      } else if (card.classList.contains('card-3')) {
+        card.classList.remove('card-3');
+        card.classList.add('card-2');
+      }
+    });
+    
+    // Update pagination active indicator (01 to 04)
+    const newTopCard = container.querySelector('.card-0');
+    if (newTopCard && activeIndicator) {
+      const newIndex = parseInt(newTopCard.getAttribute('data-index')) + 1;
+      activeIndicator.textContent = '0' + newIndex;
+    }
+  }, 300);
+  
+  // 3. Remove cycling animation class and unlock interaction
+  setTimeout(() => {
+    topCard.classList.remove('card-cycling');
+    isHeroAnimating = false;
+  }, 650);
+}
+
+// Auto-cycle stack slideshow
+document.addEventListener('DOMContentLoaded', () => {
+  const stackContainer = document.getElementById('hero-photo-stack');
+  if (stackContainer) {
+    // Start auto cycle
+    heroStackInterval = setInterval(cycleHeroStack, 4500);
+    
+    // Pause auto cycle on hover, resume on mouse leave
+    stackContainer.addEventListener('mouseenter', () => {
+      clearInterval(heroStackInterval);
+    });
+    
+    stackContainer.addEventListener('mouseleave', () => {
+      clearInterval(heroStackInterval);
+      heroStackInterval = setInterval(cycleHeroStack, 4500);
+    });
+  }
+});
+
