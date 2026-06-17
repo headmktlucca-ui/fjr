@@ -1,0 +1,13 @@
+{
+  "name": "fjr-teleprompter-lp",
+  "version": "1.0.0",
+  "description": "Premium Single Page Landing Page for FJR Teleprompter",
+  "main": "index.html",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/style.css --minify",
+    "watch": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/style.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0"
+  }
+}
