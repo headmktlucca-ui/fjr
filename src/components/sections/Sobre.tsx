@@ -5,9 +5,17 @@ import { motion } from 'framer-motion';
 
 const Sobre = () => {
   return (
-    <section id="sobre" className="relative py-24 bg-surface-dark border-t border-b border-white/5 overflow-hidden">
-      {/* Subtle background spotlight glow */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_30%_50%,var(--color-brand),transparent_60%)] opacity-5"></div>
+    <section id="sobre" className="relative py-24 overflow-hidden">
+      {/* Cinematic BG image — parallax offset left-bottom */}
+      <div className="absolute inset-0" style={{ zIndex: 0, backgroundImage: "url('/artes/hub_fjr.png')", backgroundSize: 'cover', backgroundPosition: 'left bottom', backgroundAttachment: 'fixed' }} />
+      {/* Dark overlay 76% */}
+      <div className="absolute inset-0" style={{ zIndex: 1, background: 'rgba(5,5,5,0.76)' }} />
+      {/* Top fade to black */}
+      <div className="absolute top-0 left-0 right-0" style={{ zIndex: 2, height: 120, background: 'linear-gradient(to bottom, #050505 0%, transparent 100%)' }} />
+      {/* Bottom fade to black */}
+      <div className="absolute bottom-0 left-0 right-0" style={{ zIndex: 2, height: 120, background: 'linear-gradient(to top, #050505 0%, transparent 100%)' }} />
+      {/* Gold spotlight glow left-center */}
+      <div className="absolute inset-0" style={{ zIndex: 2, background: 'radial-gradient(ellipse at 20% 55%, rgba(229,197,88,0.10) 0%, transparent 60%)', pointerEvents: 'none' }} />
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
         

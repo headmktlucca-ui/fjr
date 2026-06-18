@@ -33,18 +33,18 @@ const Hero = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-[3.4rem] leading-[1.05] tracking-tight mb-6 text-white drop-shadow-md"
+            className="font-sans font-black text-[45px] leading-[1.05] tracking-tight mb-6 text-white drop-shadow-md uppercase"
           >
             DOMINE O SEU DISCURSO <br />
             COM PRECISÃO <br />
-            <span className="text-gray-200">CINEMATOGRÁFICA</span>
+            <span className="text-white">CINEMATOGRÁFICA</span>
           </motion.h1>
           
           <motion.p 
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-base md:text-lg text-gray-300 mb-8 max-w-md font-light leading-relaxed drop-shadow-md"
+            className="text-base md:text-lg text-gray-300 mb-8 max-w-md font-medium leading-relaxed drop-shadow-md"
           >
             Operação Especializada de Teleprompter para Cinema, TV, Eventos e Shows. Em São Paulo desde 2019.
           </motion.p>
@@ -54,7 +54,7 @@ const Hero = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            <button className="bg-transparent border border-brand text-brand px-8 py-3.5 text-sm md:text-base font-bold tracking-wider hover:bg-brand hover:text-black transition-all duration-300 rounded shadow-[0_0_15px_rgba(229,197,88,0.15)] hover:shadow-[0_0_30px_rgba(229,197,88,0.4)]">
+            <button className="bg-brand/10 border border-brand text-gray-100 px-10 py-4 text-sm md:text-base font-bold tracking-wider hover:bg-brand hover:text-black transition-all duration-300 rounded shadow-[0_0_15px_rgba(229,197,88,0.2)] hover:shadow-[0_0_30px_rgba(229,197,88,0.5)] uppercase">
               FAZER ORÇAMENTO
             </button>
           </motion.div>
@@ -69,7 +69,7 @@ const Hero = () => {
         transition={{ delay: 1.5, duration: 1 }}
         className="absolute right-6 bottom-24 hidden md:flex flex-col items-center gap-4 z-20"
       >
-        <span className="text-brand text-[10px] font-mono tracking-widest [writing-mode:vertical-rl] rotate-180 opacity-80 uppercase">
+        <span className="text-gray-400 text-[10px] font-sans font-thin tracking-widest [writing-mode:vertical-rl] rotate-180 opacity-80 uppercase">
           São Paulo | Brasil
         </span>
         <motion.div 

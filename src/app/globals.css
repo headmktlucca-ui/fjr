@@ -5,7 +5,7 @@
   --color-bg-dark: #000000;
   --color-surface-dark: #0D0D12;
   --font-sans: var(--font-inter);
-  --font-display: var(--font-syne);
+  --font-display: var(--font-inter);
 }
 
 body {
@@ -17,4 +17,21 @@ body {
 ::selection {
   background-color: var(--color-brand);
   color: var(--color-bg-dark);
+}
+
+/* Cinematic section backgrounds with smooth transitions */
+.section-cinematic {
+  isolation: isolate;
+}
+
+/* Variant A: 80% dark overlay — subtle image visible */
+.section-cinematic-a > [style*="background-image"] {
+  opacity: 0.18;
+  transition: opacity 0.6s ease;
+}
+
+/* Variant B: 92% dark overlay — even more subtle for alternating */
+.section-cinematic-b > [style*="background-image"] {
+  opacity: 0.08;
+  transition: opacity 0.6s ease;
 }

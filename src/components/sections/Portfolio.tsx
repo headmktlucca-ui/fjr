@@ -40,9 +40,17 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="relative py-24 bg-bg-dark overflow-hidden">
-      {/* Subtle background spotlight glow */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_70%_50%,var(--color-brand),transparent_60%)] opacity-10"></div>
+    <section id="portfolio" className="relative py-24 overflow-hidden">
+      {/* Cinematic BG image — parallax offset right */}
+      <div className="absolute inset-0" style={{ zIndex: 0, backgroundImage: "url('/artes/hub_fjr.png')", backgroundSize: 'cover', backgroundPosition: 'right top', backgroundAttachment: 'fixed' }} />
+      {/* Dark overlay 88% */}
+      <div className="absolute inset-0" style={{ zIndex: 1, background: 'rgba(5,5,5,0.88)' }} />
+      {/* Top fade to black */}
+      <div className="absolute top-0 left-0 right-0" style={{ zIndex: 2, height: 120, background: 'linear-gradient(to bottom, #050505 0%, transparent 100%)' }} />
+      {/* Bottom fade to black */}
+      <div className="absolute bottom-0 left-0 right-0" style={{ zIndex: 2, height: 120, background: 'linear-gradient(to top, #050505 0%, transparent 100%)' }} />
+      {/* Gold spotlight glow right */}
+      <div className="absolute inset-0" style={{ zIndex: 2, background: 'radial-gradient(ellipse at 75% 40%, rgba(229,197,88,0.08) 0%, transparent 55%)', pointerEvents: 'none' }} />
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         

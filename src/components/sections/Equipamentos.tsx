@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const equipmentData = [
   {
     id: 'studio',
-    title: '19" STUDIO',
+    title: '19" STÚDIO',
     name: 'Teleprompter Fixo (19")',
     description: 'Indicado para imagens estáticas com câmeras fixas. Garante máxima visibilidade do texto com o monitor de 19 polegadas de alta taxa de contraste.',
     tags: ['Fixo', 'Estúdio', 'Alta Visibilidade'],
@@ -44,44 +44,42 @@ const Equipamentos = () => {
   const activeContent = equipmentData.find(e => e.id === activeTab);
 
   return (
-    <section id="equipamentos" className="relative py-24 bg-surface-dark border-b border-white/5 overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_30%_50%,var(--color-brand),transparent_60%)] opacity-5"></div>
+    <section id="equipamentos" className="relative py-24 overflow-hidden">
+      {/* Cinematic BG image — parallax */}
+      <div className="absolute inset-0" style={{ zIndex: 0, backgroundImage: "url('/artes/hub_fjr.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }} />
+      {/* Dark overlay 75% */}
+      <div className="absolute inset-0" style={{ zIndex: 1, background: 'rgba(5,5,5,0.76)' }} />
+      {/* Top fade to black */}
+      <div className="absolute top-0 left-0 right-0" style={{ zIndex: 2, height: 120, background: 'linear-gradient(to bottom, #050505 0%, transparent 100%)' }} />
+      {/* Bottom fade to black */}
+      <div className="absolute bottom-0 left-0 right-0" style={{ zIndex: 2, height: 120, background: 'linear-gradient(to top, #050505 0%, transparent 100%)' }} />
+      {/* Gold spotlight glow left */}
+      <div className="absolute inset-0" style={{ zIndex: 2, background: 'radial-gradient(ellipse at 25% 50%, rgba(229,197,88,0.10) 0%, transparent 60%)', pointerEvents: 'none' }} />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="mb-12">
-          <span className="font-mono text-xs text-brand uppercase tracking-widest">Tecnologia e Precisão</span>
-          <h2 className="font-display font-extrabold text-3xl md:text-5xl text-white tracking-tight mt-2">
+        <div className="mb-10 text-center">
+          <h2 className="font-sans font-medium text-gray-300 text-sm md:text-base uppercase tracking-widest">
             EQUIPAMENTOS
           </h2>
         </div>
 
         {/* Tabs Navigation */}
-        <div className="flex flex-wrap gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {equipmentData.map((equip) => {
             const isActive = activeTab === equip.id;
             return (
               <button
                 key={equip.id}
                 onClick={() => setActiveTab(equip.id)}
-                className={`relative px-8 py-4 rounded-xl text-sm font-bold tracking-wider transition-all duration-300 ${
+                className={`relative px-8 py-3.5 rounded-xl text-sm md:text-base font-sans font-medium uppercase tracking-wider transition-all duration-300 border ${
                   isActive 
-                    ? 'text-white bg-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.5)]' 
-                    : 'text-gray-500 bg-transparent hover:text-gray-300 hover:bg-white/5'
-                } border border-white/10 backdrop-blur-md overflow-hidden`}
+                    ? 'text-white border-brand shadow-[0_0_15px_rgba(229,197,88,0.5)]' 
+                    : 'text-gray-300 border-brand/30 hover:border-brand/60'
+                } backdrop-blur-md overflow-hidden`}
               >
-                {isActive && (
-                  <motion.div
-                    layoutId="activeTabIndicator"
-                    className="absolute top-0 left-0 w-full h-[2px] bg-brand shadow-[0_0_15px_rgba(229,197,88,0.8)]"
-                  />
-                )}
                 {equip.title}
-                
-                {/* Visual Separator as in image if needed */}
-                <div className="absolute right-3 top-1/2 -translate-y-1/2 w-[1px] h-4 bg-white/20"></div>
               </button>
             );
           })}

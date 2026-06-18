@@ -21,10 +21,12 @@ const Footer = () => {
             className="flex items-center cursor-pointer text-left focus:outline-none" 
             aria-label="FJR Teleprompter Home"
           >
-            {/* Logo in text format since we are moving away from old assets or standardizing */}
-            <span className="font-display font-black text-3xl tracking-tighter text-white">
-              FJ<span className="text-brand">R</span>
-            </span>
+            {/* Logo */}
+            <img 
+              src="/artes/logo.webp" 
+              alt="FJR Logo" 
+              className="h-10 md:h-12 w-auto object-contain transition-transform duration-200 hover:scale-105" 
+            />
           </button>
           <p className="font-sans font-light text-xs text-gray-400 max-w-sm leading-relaxed">
             Facilitando e agilizando gravações de lives, comerciais, shows e eventos. Atendimento ágil com qualidade premium e montagem rápida no set.

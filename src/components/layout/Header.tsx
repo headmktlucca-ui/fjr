@@ -29,10 +29,11 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex-shrink-0 group">
-            {/* If we have a logo image in public/artes/logo.webp, we can use it. Fallback to text if missing */}
-            <div className="text-3xl font-display font-bold tracking-widest text-white group-hover:text-brand transition-colors">
-              FJR
-            </div>
+            <img 
+              src="/artes/logo.webp" 
+              alt="FJR Logo" 
+              className="h-10 md:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105" 
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -51,7 +52,7 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <button className="border border-brand text-brand px-6 py-2.5 text-sm font-bold tracking-wider hover:bg-brand hover:text-bg-dark transition-all duration-300 rounded shadow-[0_0_15px_rgba(229,197,88,0.15)] hover:shadow-[0_0_25px_rgba(229,197,88,0.4)]">
+            <button className="bg-brand/10 border border-brand text-gray-100 px-6 py-2.5 text-sm font-bold tracking-wider hover:bg-brand hover:text-bg-dark transition-all duration-300 rounded shadow-[0_0_15px_rgba(229,197,88,0.2)] hover:shadow-[0_0_25px_rgba(229,197,88,0.5)] uppercase">
               SOLICITAR ORÇAMENTO
             </button>
           </div>
@@ -100,7 +101,7 @@ const Header = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={isMobileMenuOpen ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-8 bg-brand text-bg-dark px-8 py-3.5 font-bold tracking-wider text-sm rounded shadow-[0_0_20px_rgba(229,197,88,0.3)]"
+          className="mt-8 bg-brand/10 border border-brand text-gray-100 px-8 py-3.5 font-bold tracking-wider text-sm rounded shadow-[0_0_15px_rgba(229,197,88,0.2)] uppercase"
           onClick={() => setIsMobileMenuOpen(false)}
         >
           SOLICITAR ORÇAMENTO
