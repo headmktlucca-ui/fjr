@@ -1,4 +1,4 @@
-// FJR Teleprompter Landing Page Javascript
+﻿// FJR Teleprompter Landing Page Javascript
 
 // Global Helper Functions for Navigation and WhatsApp
 function scrollToSection(selector) {
@@ -50,18 +50,18 @@ mobileNavLinks.forEach(link => {
 
 // 2. Custom Gallery Lightbox Logic
 const images = [
-  "artes/img01.jpeg",
-  "artes/img02.jpeg",
-  "artes/img03.jpeg",
-  "artes/img04.jpeg",
-  "artes/img06.jpeg",
-  "artes/img07.jpeg",
-  "artes/img08.jpeg",
-  "artes/img09.jpeg",
-  "artes/img10.jpeg",
-  "artes/img11.jpeg",
-  "artes/img12.jpeg",
-  "artes/img13.jpeg"
+  "public/artes/img01.jpeg",
+  "public/artes/img02.jpeg",
+  "public/artes/img03.jpeg",
+  "public/artes/img04.jpeg",
+  "public/artes/img06.jpeg",
+  "public/artes/img07.jpeg",
+  "public/artes/img08.jpeg",
+  "public/artes/img09.jpeg",
+  "public/artes/img10.jpeg",
+  "public/artes/img11.jpeg",
+  "public/artes/img12.jpeg",
+  "public/artes/img13.jpeg"
 ];
 
 let currentIndex = 0;
@@ -217,4 +217,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
 
