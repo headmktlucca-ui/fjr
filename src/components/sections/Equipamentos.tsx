@@ -124,12 +124,17 @@ const Equipamentos = () => {
                     {activeContent.description}
                   </p>
                   
-                  <button className="self-start inline-flex items-center space-x-3 text-sm font-bold tracking-wider text-brand hover:text-white transition-colors group/btn">
+                  <a
+                    href="https://wa.me/5511998855701?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="self-start inline-flex items-center space-x-3 text-sm font-bold tracking-wider text-brand hover:text-white transition-colors group/btn"
+                  >
                     <span>SOLICITAR ORÇAMENTO</span>
                     <svg className="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </button>
+                  </a>
                 </div>
               </motion.div>
             )}

@@ -52,9 +52,14 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <button className="bg-brand/10 border border-brand text-gray-100 px-6 py-2.5 text-sm font-bold tracking-wider hover:bg-brand hover:text-bg-dark transition-all duration-300 rounded shadow-[0_0_15px_rgba(229,197,88,0.2)] hover:shadow-[0_0_25px_rgba(229,197,88,0.5)] uppercase">
+            <a
+              href="https://wa.me/5511998855701?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-brand/10 border border-brand text-gray-100 px-6 py-2.5 text-sm font-bold tracking-wider hover:bg-brand hover:text-bg-dark transition-all duration-300 rounded shadow-[0_0_15px_rgba(229,197,88,0.2)] hover:shadow-[0_0_25px_rgba(229,197,88,0.5)] uppercase inline-block"
+            >
               SOLICITAR ORÇAMENTO
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -97,15 +102,18 @@ const Header = () => {
           </motion.a>
         ))}
 
-        <motion.button 
+        <motion.a
+          href="https://wa.me/5511998855701?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
+          target="_blank"
+          rel="noopener noreferrer"
           initial={{ y: 20, opacity: 0 }}
           animate={isMobileMenuOpen ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-8 bg-brand/10 border border-brand text-gray-100 px-8 py-3.5 font-bold tracking-wider text-sm rounded shadow-[0_0_15px_rgba(229,197,88,0.2)] uppercase"
+          className="mt-8 bg-brand/10 border border-brand text-gray-100 px-8 py-3.5 font-bold tracking-wider text-sm rounded shadow-[0_0_15px_rgba(229,197,88,0.2)] uppercase inline-block"
           onClick={() => setIsMobileMenuOpen(false)}
         >
           SOLICITAR ORÇAMENTO
-        </motion.button>
+        </motion.a>
       </motion.div>
     </>
   );

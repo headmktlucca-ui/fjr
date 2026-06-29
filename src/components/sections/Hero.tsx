@@ -54,9 +54,14 @@ const Hero = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            <button className="bg-brand/10 border border-brand text-gray-100 px-10 py-4 text-sm md:text-base font-bold tracking-wider hover:bg-brand hover:text-black transition-all duration-300 rounded shadow-[0_0_15px_rgba(229,197,88,0.2)] hover:shadow-[0_0_30px_rgba(229,197,88,0.5)] uppercase">
+            <a
+              href="https://wa.me/5511998855701?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-brand/10 border border-brand text-gray-100 px-10 py-4 text-sm md:text-base font-bold tracking-wider hover:bg-brand hover:text-black transition-all duration-300 rounded shadow-[0_0_15px_rgba(229,197,88,0.2)] hover:shadow-[0_0_30px_rgba(229,197,88,0.5)] uppercase inline-block"
+            >
               FAZER ORÇAMENTO
-            </button>
+            </a>
           </motion.div>
         </div>
 
