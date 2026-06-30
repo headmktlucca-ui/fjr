@@ -1,4 +1,4 @@
-﻿// FJR Teleprompter Landing Page Javascript
+// FJR Teleprompter Landing Page Javascript
 
 // Global Helper Functions for Navigation and WhatsApp
 function scrollToSection(selector) {
